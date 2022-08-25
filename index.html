@@ -56,7 +56,8 @@ fetch(new_url)
     var parsed_detail = out.data.songs.data[i].description;
     var parsed_thumb = out.data.songs.data[i].image;
     var thumb = parsed_thumb.replace("50x50", "350x350");
-    var audio = "./play.html?id="+parsed_id+"&thumb="+thumb+"&details="+parsed_detail+"&title="+parsed_title;
+    var page_url = window.location.href;
+    var audio = page_url + "play.html?id="+parsed_id+"&thumb="+thumb+"&details="+parsed_detail+"&title="+parsed_title;
     var para = document.createElement("p");
     function play(){
     window.location = audio;
