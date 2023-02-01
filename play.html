@@ -100,7 +100,7 @@ a {
     font-weight: 700;
 }
 
-.artist {
+.details {
     max-width: 18.75rem;
     /* 300px */
     color: #808782;
@@ -197,7 +197,7 @@ progress::-webkit-progress-value { background:#cc7e85;}
             </div>
             <div class="song-info">
                 <p class="title" id="title"></p>
-                <p class="artist" id="details"></p>
+                <p class="details" id="details"></p>
             </div>
             <div class="song-timeline">
                 <span id="current-time" class="time-stamp">0:00</span>
@@ -247,20 +247,28 @@ progress::-webkit-progress-value { background:#cc7e85;}
 <a href="" download id="download" hidden></a>
  
     <script type="text/javascript">
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var id = url.searchParams.get("id");
-    var title = url.searchParams.get("title");
-    var thumb = url.searchParams.get("thumb");
-    var details = url.searchParams.get("details");
-    var api = "https://muskan-api.herokuapp.com/api/v1/getsongurl?id=";
-    var url = api+id;
-    var download = "";
-    var repeat = "false";
+    
     function get(id){
     var x = document.getElementById(id);
     return x;
     }
+    
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("id");
+    var api = "https://jiosaavn.deta.dev/songs/?lyrics=false&id=";
+    var urla = api+id;
+    fetch(urla)  
+    .then(res => res.json())  
+    .then((out) => {  
+    var title = out.songName;
+    var thumb = out.imagesUrls["500x500"];
+    var details = out.albumName + " • " + out.singers;
+    var audio = out.audioUrls["160_KBPS"];
+    download = audio;
+    get("audio-track").setAttribute("src", audio);
+    get("download").setAttribute("href", audio);
+    
     
     var link = document.querySelector("link[rel~='icon']");
     if (!link) {
@@ -274,22 +282,25 @@ progress::-webkit-progress-value { background:#cc7e85;}
     get("title").innerHTML = title;
     get("details").innerHTML = details;
     get("thumb").setAttribute("src", thumb);
-    fetch(url)  
-    .then(res => res.json())  
-    .then((out) => {
-    var audio = out.url;
-    download = audio;
-    get("audio-track").setAttribute("src", audio);
-    get("download").setAttribute("href", audio)
-    }) 
+    
+    
+    }
+    ) 
     .catch(err => {  
-    throw err  
+    alert(err)
     });
+  
+     
+    var download = "";
+    var repeat = "false";
+    
+    
     
     function file_download(){
     var url = download;
     get("download").click();
     }
+ 
  
     
     function updtprogress(){
