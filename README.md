@@ -1,3 +1,4 @@
+# Something awesome is coming up soon 🔥
 # Lovely
 
 Lovely is a web based music player, based on unofficial [JioSaavn API](https://github.com/coolguy08/jiosaavn_api) with download functionality written in pure HTML, CSS, Javascript..... No dependency or library 😄
