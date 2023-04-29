@@ -100,7 +100,7 @@ for(var i=0;i<info.albums.length;i++){
 var name = info.albums[i].name;
 var thumb = info.albums[i].image[1].link;
 var id = info.albums[i].id;
-document.getElementById("albums").innerHTML += `<div id="card" onclick="window.location.href='./albums.html?id=${id}'">
+document.getElementById("albums").innerHTML += `<div id="card" onclick="window.location.href='albums.html?id=${id}'">
 <img src="${thumb}">
 <p>${name}</p>
 </div>`
@@ -111,7 +111,7 @@ for(var i=0;i<info.playlists.length;i++){
 var name = info.playlists[i].title;
 var thumb = info.playlists[i].image[0].link;
 var id = info.playlists[i].id;
-document.getElementById("playlists").innerHTML += `<div id="card" onclick="window.location.href='/playlist.html?id=${id}'">
+document.getElementById("playlists").innerHTML += `<div id="card" onclick="window.location.href='playlist.html?id=${id}'">
 <img src="${thumb}">
 <p>${name}</p>
 </div>`
@@ -122,7 +122,7 @@ for(var i=0;i<info.charts.length;i++){
 var name = info.charts[i].title;
 var thumb = info.charts[i].image[0].link;
 var id = info.charts[i].id;
-document.getElementById("charts").innerHTML += `<div id="card" onclick="window.location.href='/playlist.html?id=${id}'">
+document.getElementById("charts").innerHTML += `<div id="card" onclick="window.location.href='playlist.html?id=${id}'">
 <img src="${thumb}">
 <p>${name}</p>
 </div>`
