@@ -31,7 +31,7 @@ for(var i=0;i<data.data.albums.results.length;i++){
 var name = data.data.albums.results[i].title;
 var thumb = data.data.albums.results[i].image[1].link;
 var id = data.data.albums.results[i].id;
-document.getElementById("albums").innerHTML += `<div id="card" onclick="window.location.href='/albums.html?id=${id}'">
+document.getElementById("albums").innerHTML += `<div id="card" onclick="window.location.href='albums.html?id=${id}'">
 <img src="${thumb}">
 <p>${name}</p>
 </div></a>`
@@ -48,7 +48,7 @@ for(var i=0;i<data.data.playlists.results.length;i++){
 var name = data.data.playlists.results[i].title;
 var thumb = data.data.playlists.results[i].image[1].link;
 var id = data.data.playlists.results[i].id;
-document.getElementById("playlists").innerHTML += `<div id="card" onclick="window.location.href='/playlist.html?id=${id}'">
+document.getElementById("playlists").innerHTML += `<div id="card" onclick="window.location.href='playlist.html?id=${id}'">
 <img src="${thumb}">
 <p>${name}</p>
 </div></a>`
@@ -89,7 +89,7 @@ for(var i=0;i<info.trending.albums.length;i++){
 var name = info.trending.albums[i].name;
 var thumb = info.trending.albums[i].image[1].link;
 var id = info.trending.albums[i].id;
-document.getElementById("trending_albums").innerHTML += `<div id="card" onclick="window.location.href='/albums.html?id=${id}'">
+document.getElementById("trending_albums").innerHTML += `<div id="card" onclick="window.location.href='albums.html?id=${id}'">
 <img src="${thumb}">
 <p>${name}</p>
 </div>`
@@ -100,7 +100,7 @@ for(var i=0;i<info.albums.length;i++){
 var name = info.albums[i].name;
 var thumb = info.albums[i].image[1].link;
 var id = info.albums[i].id;
-document.getElementById("albums").innerHTML += `<div id="card" onclick="window.location.href='/albums.html?id=${id}'">
+document.getElementById("albums").innerHTML += `<div id="card" onclick="window.location.href='./albums.html?id=${id}'">
 <img src="${thumb}">
 <p>${name}</p>
 </div>`
