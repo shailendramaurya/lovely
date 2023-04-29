@@ -1,4 +1,4 @@
-![Logo](https://dev-to-)
+![Logo](https://shailendramaurya.github.io/lovely/favicon.png)
 
 
 # Lovely
