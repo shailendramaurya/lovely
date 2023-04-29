@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Lovely</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto&subset=latin,devanagari'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'><link rel="stylesheet" href="./css/style.css">
+<script>
+window.onload = function(){
+var splash = localStorage.getItem("lovelysplash");
+if(splash){
+window.location.href="app.html";
+}
+else{
+localStorage.setItem("lovelysplash", true);
+}
+}
+</script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="welcome">
+  <span id="splash-overlay" class="splash"></span>
+  <span id="welcome" class="z-depth-4"></span>
+ 
+  <header class="navbar-fixed"> 
+    <nav class="row light-blue darken-4">
+      <div class="col s12">
+        <ul class="right">
+          <li class="right">
+            <a href="https://github.com/shailendramaurya" target="_blank" class="fa fa-user fa-2x waves-effect waves-light"><span class="icon-text"></span></a>
+          </li>
+          <li class="right">
+            <a href="https://github.com/shailendramaurya/lovely" target="_blank" class="fa fa-github-square fa-2x waves-effect waves-light"><span class="icon-text"></span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="valign-wrapper">
+    <span class="container grey-text text-lighten-1 ">
+
+      <p class="flow-text">Welcome to</p>
+      <h1 class="title grey-text text-lighten-3">Lovely</h1>
+ <p class="flow-text">
+A lightweight web based music streaming app based on Unofficial JioSaavn API written in HTML, CSS & Javascript with download functionality
+</p>
+      
+
+<footer>
+    
+        
+<a class="waves-effect waves-light btn-large right" href="app.html">Get Started</a>
+
+      
+  </footer>
+</span>
+</main>
+  
+
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+</body>
+</html>

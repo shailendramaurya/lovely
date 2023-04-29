@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" href="css/app.css">
+</head>
+
+<body alink="#914c24" vlink="914c24">
+
+    <object id="home" data="home.html" type="text/html">
+    </object>
+    <object id="player" name="player" data="song.html" type="text/html">
+</object>
+
+<div id="donation">
+<p><h1>Donation  <span class="material-symbols-outlined">
+redeem
+</span>
+<pre onclick="shoop(this,1,200);setTimeout(()=>{document.getElementById('donation').style.display='none'},250)">X</pre>
+</h1>
+</p>
+
+<a href="upi://pay?pa=shailendramaurya.in@ibl&pn=Shailendra Maurya&tn=Thanks" target="_blank">
+<img src="assets/upi-logo.png">
+</a>
+
+<a href="https://paypal.me/shailenam" target="_blank">
+<img src="assets/paypal-icon.png">
+</a>
+
+<a href="https://buymeacoffee.com/shailenima" target="_blank">
+<img src="assets/buymeacoffee.svg"></a>
+</div>
+
+
+    <div id="settings_bg"></div>
+    <div id="settings">
+        <center>
+            <div>
+                <img src="favicon.png" width="90%" height="auto">
+
+            </div>
+            <br>
+            <div class="btn_box_main">
+                <div class="btn_box" style="display:flex;">
+                    <div onclick="shoop(this,1,200)">
+                        <span class="material-symbols-outlined">
+                            music_note
+                        </span>
+                        <h2>Quality</h2>
+                    </div>
+                    <div onclick="shoop(this,1,200);donateInit();"><span class="material-symbols-outlined">
+                            volunteer_activism
+                        </span>
+                        <h2>Donate</h2>
+                    </div>
+                </div>
+                <div class="btn_box" style="display:flex;">
+                    <div onclick="shoop(this,1,200);"><span class="material-symbols-outlined">
+                            download
+                        </span>
+                        <h2>Downloads</h2>
+                    </div><br>
+                    <div onclick="shoop(this,1,200);"><span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                        <h2>Favourites</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="footer">
+                <img src="https://avatars.githubusercontent.com/u/87139652?v=4" width="90px" height="90px">
+                <p id="my_details">With ❤️ by <br>
+                <h3>Shailendra Maurya</h3>
+                </p>
+            </div>
+    </div>
+    </center>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a href="#" onclick="showHome()"><span class="material-symbols-outlined">
+                    home</span></a>
+            <a href="#" onclick="showPlayer();"><span class="material-symbols-outlined">
+                    radio
+                </span></a>
+            <a href="#" onclick="showSettings()"><span class="material-symbols-outlined">
+                    settings
+                </span></a>
+        </div>
+    </div>
+<script src="scripts/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body onload="init()">
+<br><br><br>
+<div id="search">
+<h2>Welcome</h2>
+<br>
+<form onsubmit="search();return false" method="get">
+<div>
+<input id="search_box" type="text">
+<span class="material-symbols-outlined">
+search
+</span>
+</div>
+</form>
+</div>
+<div id="trending">
+<h2>Trending Songs</h2>
+<p id="trending_songs"></p>
+
+<h2>Trending Albums</h2>
+<p id="trending_albums"></p>
+</div>
+
+<p id="song_results_title">
+</p>
+<p id="song_results">
+</p>
+
+<h1>Albums</h1>
+<p id="albums">
+</p>
+<h1>Playlists</h1>
+<p id="playlists">
+</p>
+
+<h1>Charts</h1>
+<p id="charts">
+</p>
+<script src="scripts/home.js"></script>
+</body>
+</html>
