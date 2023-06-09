@@ -30,7 +30,7 @@ body{color:#914c24;}
                 <use xlink:href="#icon-heart-o"></use>
               </svg>
             </div>
-            <a :href="currentTrack.url" target="_blank" class="player-controls__item" download="currentTrack.name">
+            <a :href="'http://sm.likesyou.org/song.php?fileName=' + currentTrack.name + '.mp3&fileUrl=' + encodeURIComponent(currentTrack.url)" target="_blank" class="player-controls__item" download="currentTrack.name">
               <svg class="icon">
                 <use xlink:href="#icon-link"></use>
               </svg>
