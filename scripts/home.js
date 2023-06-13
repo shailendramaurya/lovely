@@ -1,3 +1,31 @@
+function search_saavnapi(){
+  var query = document.getElementById("search_box").value;
+  var saavnapi = "https://jiosaavn-api-privatecvc.vercel.app/search/songs?limit=40&query="+query;
+  document.getElementById("song_results").innerHTML = "<h2>Please Wait...</h2>"
+  fetch(saavnapi)
+.then(response=>response.json())
+.then(data=>{
+  document.getElementById("song_results").innerHTML ="";
+  for(var i=0;i<data.data.results.length;i++){
+var name = data.data.results[i].name;
+var thumb = data.data.results[i].image[1].link;
+var id = data.data.results[i].id;
+
+document.getElementById("song_results").innerHTML += `<a href="song.html?id=${id}" target="player"><div id="card">
+<img src="${thumb}">
+<p>${name}</p>
+</div></a>`
+}
+
+  
+})
+.catch(err=>alert(err))
+
+  
+}
+
+
+
 function search(){
 var query = document.getElementById("search_box").value;
 var url = "https://saavn.me/search/all?query="+query;
@@ -20,6 +48,11 @@ document.getElementById("song_results").innerHTML += `<a href="song.html?id=${id
 <p>${name}</p>
 </div></a>`
 }
+
+
+//view more button
+document.getElementById("song_results").innerHTML += `<button id="view_more" onclick="search_saavnapi()">View More</button>`
+
 
 //albums
 document.getElementById("albums").innerHTML = "";

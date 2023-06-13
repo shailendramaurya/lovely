@@ -80,3 +80,16 @@ padding:;
 margin:5px;
 transform:scale(1.5);
 }
+
+#view_more{
+  height:150;
+  width:auto;
+  padding:10px;
+margin:5px;
+border:none;
+border-radius:15px;
+box-shadow:1px 1px 5px 1px grey;
+background:#fbe9e7;
+color:#914c24;
+font-family: ubuntu;
+}
