@@ -115,6 +115,8 @@ new Vue({
                 .catch(err => console.log(err));
           }
             this.$forceUpdate();
+            this.nextTrack();
+            this.prevTrack();
             this.play();
 
 
