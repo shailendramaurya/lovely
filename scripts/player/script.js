@@ -13,6 +13,26 @@ var objs;
 const favicon = document.createElement('link');
 favicon.rel = 'shortcut icon';
 
+Vue.component('error-handler', {
+  data() {
+    return {
+      hasError: false,
+      errorMessage: ''
+    };
+  },
+  errorCaptured(error) {
+    this.hasError = true;
+    this.errorMessage = error.message;
+    return false; // Prevent the error from propagating further
+  },
+  template: `
+    <div v-if="hasError">
+      <p>An error occurred: {{ errorMessage }}</p>
+    </div>
+  `
+});
+
+
 new Vue({
     el: "#app",
     data() {
@@ -36,6 +56,13 @@ new Vue({
         this.tracks = JSON.parse(event.newValue) || [];
       }
     },
+    update_playlist(){
+          document.getElementById("playlist").innerHTML="";
+        for (let i = 0; i < this.tracks.length; i++) {
+            var name = this.tracks[i].name;
+            document.getElementById("playlist").innerHTML += `<p style="margin:5px;font-size:1.2em;">${name}</p>`
+        }
+},
         changeTrack(index) {
             this.currentTrackIndex = index;
         },
@@ -87,8 +114,6 @@ new Vue({
                 })
                 .catch(err => console.log(err));
           }
-            this.nextTrack();
-            this.prevTrack();
             this.$forceUpdate();
             this.play();
 
@@ -248,14 +273,22 @@ new Vue({
         }
     },
     created() {
-// Listen for changes in local storage
-    window.addEventListener("storage", this.updateLocalStorage);
 
         this.init();
-        for (let i = 0; i < this.tracks.length; i++) {
-            var name = this.tracks[i].name;
-            document.getElementById("playlist").innerHTML += `<p style="margin:5px;font-size:1.2em;">${name}</p>`
-        }
+        
+this.update_playlist();
+// Listen for changes in local storage
+    window.addEventListener("storage", this.updateLocalStorage);
+   window.addEventListener("storage", this.update_playlist);
+
+   window.addEventListener("storage", ()=>{
+     if(this.currentTrackIndex>1){
+       this.currentTrackIndex--;
+     }
+                this.currentTrack = this.tracks[this.currentTrackIndex];
+            this.resetPlayer();
+   });
+
 
         favicon.href = this.tracks[this.currentTrackIndex].cover;
         document.head.appendChild(favicon);
