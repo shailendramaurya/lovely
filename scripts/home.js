@@ -1,3 +1,54 @@
+function add_track(obj){
+if(localStorage.getItem("lovelytracks") == null){
+    localStorage.setItem("lovelytracks", JSON.stringify([obj]));
+  }
+
+    
+    var orignal_arr = JSON.parse(localStorage.getItem("lovelytracks")) || [];
+    
+    const isDuplicate = orignal_arr.some(track => track.url === obj.url);
+            if (isDuplicate) {
+                var index = orignal_arr.findIndex(x => x.url === obj.url);
+                console.log("Track is already in playlist");
+                return;
+            }
+            
+orignal_arr.unshift(obj);
+localStorage.setItem("lovelytracks", JSON.stringify(orignal_arr));
+
+            // Update localStorage
+            
+}
+
+
+function fetch_id(id) {
+            const url = "https://saavn.me/songs?id=" + id;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    info = data.data;
+                })
+                .then(() => {
+                    var title = info[0].name;
+                    var thumb = info[0].image[2].link;
+                    var audio = info[0].downloadUrl[3].link;
+                    var artists = info[0].primaryArtists;
+                    objs = {
+                        name: title,
+                        artist: artists,
+                        cover: thumb,
+                        source: audio,
+                        url: audio,
+                        favorited: false
+                    };
+                  add_track(objs);
+                })
+                .catch(err => console.log(err));
+}
+
+
+
+
 function search_saavnapi(){
   var query = document.getElementById("search_box").value;
   var saavnapi = "https://jiosaavn-api-privatecvc.vercel.app/search/songs?limit=40&query="+query;
@@ -11,7 +62,7 @@ var name = data.data.results[i].name;
 var thumb = data.data.results[i].image[1].link;
 var id = data.data.results[i].id;
 
-document.getElementById("song_results").innerHTML += `<a href="song.html?id=${id}" target="player"><div id="card">
+document.getElementById("song_results").innerHTML += `<a><div onclick="fetch_id('${id}')" id="card">
 <img src="${thumb}">
 <p>${name}</p>
 </div></a>`
@@ -43,7 +94,8 @@ for(var i=0;i<data.data.songs.results.length;i++){
 var name = data.data.songs.results[i].title;
 var thumb = data.data.songs.results[i].image[1].link;
 var id = data.data.songs.results[i].id;
-document.getElementById("song_results").innerHTML += `<a href="song.html?id=${id}" target="player"><div id="card">
+                    
+document.getElementById("song_results").innerHTML += `<a><div onclick="fetch_id('${id}')" id="card">
 <img src="${thumb}">
 <p>${name}</p>
 </div></a>`
@@ -111,7 +163,7 @@ for(var i=0;i<info.trending.songs.length;i++){
 var name = info.trending.songs[i].name;
 var thumb = info.trending.songs[i].image[1].link;
 var id = info.trending.songs[i].id;
-document.getElementById("trending_songs").innerHTML += `<a href="song.html?id=${id}" target="player"><div id="card">
+document.getElementById("trending_songs").innerHTML += `<a><div onclick="fetch_id('${id}')" id="card">
 <img src="${thumb}">
 <p>${name}</p>
 </div></a>`

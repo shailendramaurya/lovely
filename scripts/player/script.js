@@ -31,6 +31,11 @@ new Vue({
         };
     },
     methods: {
+      updateLocalStorage(event) {
+      if (event.key === "lovelytracks") {
+        this.tracks = JSON.parse(event.newValue) || [];
+      }
+    },
         changeTrack(index) {
             this.currentTrackIndex = index;
         },
@@ -58,6 +63,7 @@ new Vue({
 
         },
         init: async function() {
+          if(id!==null){
             const url = "https://saavn.me/songs?id=" + id;
             await fetch(url)
                 .then(response => response.json())
@@ -80,6 +86,7 @@ new Vue({
                     this.addTrack(objs); // push objs to the tracks array
                 })
                 .catch(err => console.log(err));
+          }
             this.nextTrack();
             this.prevTrack();
             this.$forceUpdate();
@@ -241,6 +248,8 @@ new Vue({
         }
     },
     created() {
+// Listen for changes in local storage
+    window.addEventListener("storage", this.updateLocalStorage);
 
         this.init();
         for (let i = 0; i < this.tracks.length; i++) {
