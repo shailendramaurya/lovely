@@ -15,8 +15,9 @@ A web based music player with beautiful material UI
 
 
 ## Features
-
+- Lightweight with PWA
 - Stream any song from JioSaavn 😎
+- Quality control (12kbps-320kps)
 - Download songs
 - Full playback control via notification bar (Android/iOS)
 - Playlist Support
@@ -32,9 +33,9 @@ Live demo [Here](https://shailendramaurya.github.io/lovely)
 
 ## Features yet to implement
 - Favourites tray
-- Song quality toggle
-- Development of Android App
-- PWA
+- ~~Song quality toggle~~
+- Development of Native App
+- ~~PWA~~
 - ......... etc etc
 
 ## Author
