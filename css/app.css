@@ -180,3 +180,25 @@ height:auto;
 margin:10px;
 margin-left: 70px;
 }
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border:1px solid transparent;
+  padding: 0 1em 0 0;
+  margin: 0;
+  padding-left:0.5em;
+  width: 100%;
+  font-family: inherit;
+  color:#914c24;
+  font-weight: bold;
+  cursor: inherit;
+  line-height: inherit;
+  font-size: 1.5em;
+}
+select::-ms-expand {
+  display: none;
+}
+select::before{
+  border:none;
+}

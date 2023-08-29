@@ -390,6 +390,7 @@ body {
 background:white;
   width: 350px;
   min-height:280px;
+  max-height: 280px;
   box-shadow: 5px 5px 35px 5px grey;
   border-radius: 15px 15px 15px 15px;
   padding:0px;
@@ -398,9 +399,12 @@ margin-bottom: -15px;
 position:fixed;
 bottom:-220px;
 z-index:;
-overflow-x: hidden;
-overflow-y: hidden;
+overflow-x:hidden;
+overflow-y: auto;
 transition: all 0.5s ease;
+}
+.playlist-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 #clear-tracks-btn{
 position:absolute;

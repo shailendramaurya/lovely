@@ -49,11 +49,17 @@ redeem
             <br>
             <div class="btn_box_main">
                 <div class="btn_box" style="display:flex;">
-                    <div onclick="shoop(this,1,200)">
+                    <div onclick="shoop(this,1,200);quality()">
                         <span class="material-symbols-outlined">
                             music_note
                         </span>
-                        <h2>Quality</h2>
+                        <select id="quality" onchange="changeQuality(this.value)">
+ <option value="12"><h2>12kbps</h2></option>
+  <option value="48"><h2>48kbps</h2></option> 
+  <option value="96"><h2>96kbps</h2></option> 
+  <option value="160" selected><h2>160kbps</h2></option>
+  <option value="320"><h2>320kbps </h2></option>
+  </select> 
                     </div>
                     <div onclick="shoop(this,1,200);donateInit();"><span class="material-symbols-outlined">
                             volunteer_activism
@@ -73,6 +79,10 @@ redeem
                         <h2>Favourites</h2>
                     </div>
                 </div>
+                
+                
+                 
+  
             </div>
             <br>
             <div id="footer">
@@ -96,6 +106,8 @@ redeem
                 </span></a>
         </div>
     </div>
+   
+
 <script src="scripts/app.js"></script>
 <script>
         if ('serviceWorker' in navigator) {

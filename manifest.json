@@ -2,7 +2,7 @@
     "name": "Lovely",
     "short_name": "Lovely",
     "description": "Stream Music",
-    "start_url": "/app.html",
+    "start_url": "app.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#3498db",

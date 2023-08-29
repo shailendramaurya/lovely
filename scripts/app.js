@@ -1,3 +1,15 @@
+function quality(){
+  document.getElementById("quality").click();
+}
+  
+function changeQuality(quality){
+ var songData = JSON.parse(localStorage.getItem("lovelytracks"));
+ for(let i=0;i<songData.length;i++){
+   songData[i].url= songData[i].url.replace(/_(.*?)\./, `_${quality}.`)
+   songData[i].source=songData[i].source.replace(/_(.*?)\./, `_${quality}.`)
+   localStorage.setItem("lovelytracks", JSON.stringify(songData));
+ }
+}
 function donateInit(){
 document.getElementById("donation").style.display="block";
 }
