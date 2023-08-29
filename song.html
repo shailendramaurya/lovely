@@ -67,10 +67,6 @@ body{color:#914c24;}
           </div>
           <div class="progress__time">{{ currentTime }}</div>
         </div>
-         <a id="clear-tracks-btn" @click="clearTracks">
-        Clear PlayList
-        </a>
-     
 
         <div v-cloak></div>
       </div>
@@ -78,13 +74,19 @@ body{color:#914c24;}
 
 
    <div class="playlist-container">
-        <div class="playlist-toggle" onclick="togglePlaylist()">Playlist</div>
+        <div class="playlist-toggle" onclick="var btm = document.querySelector('.playlist-container'); if(btm.style.bottom=='-40px'){btm.style.bottom='-220px'}else{btm.style.bottom='-40px';}"><h2>Playlist</h2>
+        
+                 <a id="clear-tracks-btn" @click="clearTracks">
+        Clear PlayList
+        </a>
+        </div>
         <div id="playlist" class="playlist">
         
         <p>{{ trackTitles }}</p>
         </div>
       
 </div>
+
 
     </div>
 
