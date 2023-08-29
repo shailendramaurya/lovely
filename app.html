@@ -8,6 +8,7 @@
     <link rel="shortcut icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link rel="stylesheet" href="css/app.css">
+ <link rel="manifest" href="manifest.json">
 </head>
 
 <body alink="#914c24" vlink="914c24">
@@ -98,7 +99,7 @@ redeem
 <script src="scripts/app.js"></script>
 <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
+            navigator.serviceWorker.register('scripts/sw.js')
                 .then((registration) => {
                     console.log('Service Worker registered with scope:', registration.scope);
                 })
