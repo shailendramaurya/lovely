@@ -11,7 +11,7 @@ A web based music player with beautiful material UI
     <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-F0DB4F?style=flat&logo=javascript&logoColor=white"/>
     <img alt="Open Source? Yes!" src="https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github"/>
 
-
+## This project will be getting huge rewrite soon
 
 
 ## Features
@@ -42,13 +42,6 @@ Live demo [Here](https://shailendramaurya.github.io/lovely)
 
 - [@shailendramaurya](https://www.github.com/shailendramaurya)
 If you have any questions, comments, or concerns, feel free to contact me below.
-
-<p align="left">
-  <a href="mailto:shailendramaurya.in@gmail.com"> 
-    <img alt="Connect via Email" src="https://img.shields.io/badge/Gmail-c14438?style=flat&logo=Gmail&logoColor=white" />
-  </a>
-</p>
-
 
 ## Special thanks to
 - [Mini Player](https://github.com/muhammed/mini-player)
