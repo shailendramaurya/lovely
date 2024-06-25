@@ -91,7 +91,7 @@ new Vue({
         },
         init: async function() {
           if(id!==null){
-            const url = "https://saavn.me/songs?id=" + id;
+            const url = "https://lovely-api.vercel.app/songs?id=" + id;
             await fetch(url)
                 .then(response => response.json())
                 .then(data => {
