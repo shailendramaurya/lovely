@@ -22,7 +22,7 @@ localStorage.setItem("lovelytracks", JSON.stringify(orignal_arr));
 
 
 function fetch_id(id) {
-            const url = "https://saavn.me/songs?id=" + id;
+            const url = "https://lovely-api.vercel.app/songs?id=" + id;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -79,7 +79,7 @@ document.getElementById("song_results").innerHTML += `<a><div onclick="fetch_id(
 
 function search(){
 var query = document.getElementById("search_box").value;
-var url = "https://saavn.me/search/all?query="+query;
+var url = "https://lovely-api.vercel.app/search/all?query="+query;
 fetch(url)
 .then(response=>response.json())
 .then(data=>{
@@ -148,7 +148,7 @@ document.getElementById("playlists").innerHTML += `<div id="card" onclick="windo
 var info;
 var infomain;
 async function init(){
-const url="https://saavn.me/modules?language=hindi";
+const url="https://lovely-api.vercel.app/modules?language=hindi";
 fetch(url)
 .then(response=>response.json())
 .then(data=>{
