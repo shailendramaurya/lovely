@@ -5,7 +5,7 @@ var id = url.searchParams.get("id");
 
 var info;
 async function init(){
-const url="https://saavn.me/albums?id="+id;
+const url="https://lovely-api.vercel.app/albums?id="+id;
 fetch(url)
 .then(response=>response.json())
 .then(data=>{
